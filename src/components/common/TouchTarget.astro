@@ -1,0 +1,18 @@
+---
+interface Props {
+  as?: keyof HTMLElementTagNameMap;
+  class?: string;
+}
+
+const { as: Element = 'button', class: className = '' } = Astro.props;
+---
+
+<Element 
+  class:list={[
+    'min-w-[44px] min-h-[44px]', // Minimum touch target size
+    'flex items-center justify-center',
+    className
+  ]}
+>
+  <slot />
+</Element>

@@ -1,0 +1,26 @@
+---
+const posts = [
+  {
+    title: "First Blog Post",
+    date: "2024-01-01",
+    description: "A brief description of the first blog post",
+    category: "Technology"
+  }
+];
+---
+
+<section id="blog" class="py-20">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Blog</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map(post => (
+        <article class="bg-white p-6 rounded-lg shadow-md">
+          <span class="text-sm text-primary mb-2 block">{post.category}</span>
+          <h3 class="text-xl font-semibold mb-2">{post.title}</h3>
+          <p class="text-gray-600 mb-4">{post.description}</p>
+          <time class="text-sm text-gray-500">{post.date}</time>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#research", label: "Research" },
+  { href: "#blog", label: "Blog" },
+  { href: "#connect", label: "Connect" }
+];
+---
+
+<header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-200">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-2xl font-bold text-primary">Portfolio</a>
+      
+      <div class="hidden md:flex items-center space-x-8">
+        {links.map(link => (
+          <a href={link.href} class="text-gray-600 hover:text-primary transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <button class="md:hidden" id="menu-toggle" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="flex flex-col space-y-4 pt-4 pb-3">
+        {links.map(link => (
+          <a href={link.href} class="text-gray-600 hover:text-primary transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
