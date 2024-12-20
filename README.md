@@ -1,3 +1,5 @@
+# Check out the live demo
+https://portfoliotemplatenpm.netlify.app/
 # A npm portfolio template
 I created this template using Astro and bolt.new
 Try it out
