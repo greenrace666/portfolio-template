@@ -12,4 +12,4 @@ git clone https://github.com/greenrace666/portfolio-template/
 cd portfolio-template
 pnpm install && pnpm run dev
 ```
-(Edit /src/components/ to modify)
+**(Edit /src/components/sections/ to modify)**
